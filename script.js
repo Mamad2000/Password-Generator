@@ -14,6 +14,7 @@ function writePassword() {
 }
 
 function generatePassword() {
+    // Call this function to get the password criteria
     passCriteria();
     // Password generator code
     // Used code from: 
@@ -32,7 +33,7 @@ function generatePassword() {
     }
     // if user chose Uppercase type
     if (characterTypeUppercase === "Y") {
-        for (var i = 0; i <= passwordLength; i++) {
+        for (var j = 0; j <= passwordLength; j++) {
             var randomNumber = Math.floor(Math.random() * characterTypes.upperCase.length);
             password01 += chars.substring(randomNumber, randomNumber +1);
 
@@ -40,7 +41,7 @@ function generatePassword() {
     }
 
     if (characterTypeNumeric === "Y") {
-        for (var i = 0; i <= passwordLength; i++) {
+        for (var k = 0; k <= passwordLength; k++) {
             var randomNumber = Math.floor(Math.random() * characterTypes.numeric.length);
             password01 += chars.substring(randomNumber, randomNumber +1);
 
@@ -48,13 +49,14 @@ function generatePassword() {
     }
 
     if (characterTypeSpecial === "Y") {
-        for (var i = 0; i <= passwordLength; i++) {
+        for (var l = 0; l <= passwordLength; l++) {
             var randomNumber = Math.floor(Math.random() * characterTypes.special.length);
             password01 += chars.substring(randomNumber, randomNumber +1);
 
         }
     }
     document.getElementById("password01").value = password01;
+    window.alert(password01);
     // writePassword();
     // Ask user if they want to generate a new password
     var generateAgain = window.confirm("Generate new password?");
