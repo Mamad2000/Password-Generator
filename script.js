@@ -32,7 +32,7 @@ function generatePassword() {
         lowerCase: "abcdefghijklmnopqrstuvwxyz",
         upperCase: "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
         numeric: "0123456789",
-        special: [" ","!",`"`,"#","$","%","&","'","()","*","+",",","-",".","/",":",";","<","=",">","?","@","[","]","^","_","{","|","}","~","]",],
+        special: [" ","!",`"`,"#","$","%","&","'","()","*","+",",","-",".","/",":",";","<","=",">","?","@","[","]","^","_","{","|","}","~","]"],
 
     }    
 
@@ -104,7 +104,7 @@ function generatePassword() {
         }
     }
     document.getElementById("password01").value = password01;
-    writePassword();
+    // writePassword();
     // Ask user if they want to generate a new password
     var generateAgain = window.confirm("Generate new password?");
 
