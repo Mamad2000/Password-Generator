@@ -115,9 +115,9 @@ function passCriteria() {
     var characterTypeLowercase = window.prompt("Enter your character type:\n1) Lowercase\nPlease select Y or N");
     characterTypeLowercase = characterTypeLowercase.toUpperCase();
     if (characterTypeLowercase === "Y") {
-        window.alert("Lowercase type validated!");
-
-        
+        window.alert("Lowercase type validated!");        
+    } else {
+        window.alert("Lowercase type not chosen!");
     }
 
     var characterTypeUppercase = window.prompt("Enter your character type:\n2) Uppercase\nPlease select Y or N");
@@ -125,19 +125,28 @@ function passCriteria() {
     if (characterTypeUppercase === "Y") {
         window.alert("Uppercase type validated!");
 
+    } else {
+        window.alert("Uppercase type not chosen!");
     }
+
 
     var characterTypeNumeric = window.prompt("Enter your character type:\n3) Numeric\nPlease select Y or N");
     characterTypeNumeric = characterTypeNumeric.toUpperCase();
     if (characterTypeNumeric === "Y") {
         window.alert("Numeric type validated!");
+    } else {
+        window.alert("Numeric type not chosen!");
     }
+
 
     var characterTypeSpecial = window.prompt("Enter your character type:\n4) Special Characters\nPlease select Y or N");
     characterTypeSpecial = characterTypeSpecial.toUpperCase();
     if (characterTypeSpecial === "Y") {
         window.alert("Special characters validated!");
+    } else {
+        window.alert("Special type not chosen!");
     }
+
 
     // return characterTypeLowercase && characterTypeUppercase && characterTypeNumeric && characterTypeSpecial;
 }
