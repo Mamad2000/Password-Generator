@@ -5,6 +5,7 @@ var numericCharacters = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9'];
 var lowerCasedCharacters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
 var upperCasedCharacters = ['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z'];
+
 var specialCharacters = ['@','%','+','\\','/',"'",'!','#','$','^','?',':',',',')','(','}','{',']','[','~','-','_','.'];
 
 
@@ -41,7 +42,7 @@ function generatePassword() {
         }
     }
     // if user chose Uppercase type
-    if (characterTypeUppercase === "Y") {
+    else if (characterTypeUppercase === "Y") {
         for (var j = 0; j <= passwordLength; j++) {
             var randomNumber = Math.floor(Math.random() * upperCasedCharacters.length);
             password01 += chars.substring(randomNumber, randomNumber +1);
@@ -49,7 +50,7 @@ function generatePassword() {
         }
     }
     // if user chose numeric type
-    if (characterTypeNumeric === "Y") {
+    else if (characterTypeNumeric === "Y") {
         for (var k = 0; k <= passwordLength; k++) {
             var randomNumber = Math.floor(Math.random() * numericCharacters.length);
             password01 += chars.substring(randomNumber, randomNumber +1);
@@ -57,14 +58,21 @@ function generatePassword() {
         }
     }
     // if user chose special type
-    if (characterTypeSpecial === "Y") {
+    else if (characterTypeSpecial === "Y") {
         for (var l = 0; l <= passwordLength; l++) {
             var randomNumber = Math.floor(Math.random() * specialCharacters.length);
             password01 += chars.substring(randomNumber, randomNumber +1);
 
         }
     }
+    // If all characters were chosen
+    else if (characterTypeLowercase === "Y" && characterTypeUppercase === "Y" && characterTypeSpecial === "Y" && characterTypeNumeric === "Y") {
+        for (var m = 0; m <= passwordLength; m++) {
+            var randomNumber = Math.floor(Math.random() * specialCharacters.length + numericCharacters.length +upperCasedCharacters.length +lowerCasedCharacters.length);
+            password01 += chars.substring(randomNumber, randomNumber +1);
 
+        }
+    }
 
     document.querySelector("#password").value = password01;
     window.alert(password01);
@@ -103,7 +111,7 @@ function passCriteria() {
           
 
     // }    
-    
+
     var characterTypeLowercase = window.prompt("Enter your character type:\n1) Lowercase\nPlease select Y or N");
     characterTypeLowercase = characterTypeLowercase.toUpperCase();
     if (characterTypeLowercase === "Y") {
@@ -130,6 +138,7 @@ function passCriteria() {
     if (characterTypeSpecial === "Y") {
         window.alert("Special characters validated!");
     }
+
     // return characterTypeLowercase && characterTypeUppercase && characterTypeNumeric && characterTypeSpecial;
 }
 
